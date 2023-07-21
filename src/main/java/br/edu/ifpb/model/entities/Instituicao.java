@@ -30,6 +30,13 @@ public class Instituicao  implements Serializable {
         this.stSituacao = 1;
     }
 
+    public Instituicao() {
+    }
+
+    public Instituicao(Long codInstituicao) {
+        this.codInstituicao = codInstituicao;
+    }
+
     public Long getCodInstituicao() {
         return codInstituicao;
     }

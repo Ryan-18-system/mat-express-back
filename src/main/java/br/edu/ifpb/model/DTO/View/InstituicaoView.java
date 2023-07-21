@@ -2,6 +2,9 @@ package br.edu.ifpb.model.DTO.View;
 
 import jakarta.persistence.Column;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class InstituicaoView {
 
     private Long codInstituicao;
@@ -11,6 +14,16 @@ public class InstituicaoView {
     private String sigla;
 
     private String contato;
+
+    private Set<PeriodoLetivoView> periodosLetivos = new HashSet<>();
+
+    public Set<PeriodoLetivoView> getPeriodosLetivos() {
+        return periodosLetivos;
+    }
+
+    public void setPeriodosLetivos(Set<PeriodoLetivoView> periodosLetivos) {
+        this.periodosLetivos = periodosLetivos;
+    }
 
     public Long getCodInstituicao() {
         return codInstituicao;

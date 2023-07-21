@@ -1,12 +1,14 @@
-package br.edu.ifpb.utils.mapers.impl;
+package br.edu.ifpb.utils.mapers.impl.instituicao;
 
 import br.edu.ifpb.model.DTO.View.InstituicaoView;
 import br.edu.ifpb.model.entities.Instituicao;
 import br.edu.ifpb.utils.mapers.Mapper;
-import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.enterprise.context.RequestScoped;
 
-@ApplicationScoped
-public class InstituicaoViewImpl implements Mapper<Instituicao, InstituicaoView> {
+import java.util.Collection;
+
+@RequestScoped
+public class InstituicaoMapperView implements Mapper<Instituicao, InstituicaoView> {
     @Override
     public InstituicaoView map(Instituicao object) {
         InstituicaoView instituicaoView = new InstituicaoView();
@@ -15,5 +17,10 @@ public class InstituicaoViewImpl implements Mapper<Instituicao, InstituicaoView>
         instituicaoView.setSigla(object.getSigla());
         instituicaoView.setCodInstituicao(object.getCodInstituicao());
         return instituicaoView;
+    }
+
+    @Override
+    public Collection<InstituicaoView> mapCollection(Collection<Instituicao> objects) {
+        return null;
     }
 }

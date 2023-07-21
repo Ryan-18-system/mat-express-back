@@ -10,6 +10,15 @@ public class InstituicaoForm {
     private String sigla;
     @NotBlank(message = "Contato não pode ser nulo ou vazio")
     private String contato;
+    private Long codPeriodoAtual;
+
+    public Long getCodPeriodoAtual() {
+        return codPeriodoAtual;
+    }
+
+    public void setCodPeriodoAtual(Long codPeriodoAtual) {
+        this.codPeriodoAtual = codPeriodoAtual;
+    }
 
     public String getNome() {
         return nome;
